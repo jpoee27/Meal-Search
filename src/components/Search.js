@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-const Search = () => {
-  const [searchItem, setSearchItem] = useState('');
-
+const Search = ({ searchItem, setSearchItem, fetchMeals }) => {
   const handleSearchChange = e => {
     setSearchItem(e.target.value);
   }
@@ -12,9 +10,9 @@ const Search = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (searchItem !== "") {
+      fetchMeals();
       setSearchItem("");
       
-      console.log(searchItem);
     } else {
       alert("Please Enter a Value in the Search Bar");
     }
