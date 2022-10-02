@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Header from "./components/Header";
 import Search from "./components/Search";
@@ -18,7 +18,7 @@ function App() {
   }
     
   return (
-    <div className="bg-cover bg-[url('./images/background.jpg')] min-h-screen z-50">
+    <div className="bg-cover bg-[url('./images/mobile-background.jpeg')]  lg:bg-[url('./images/desktop-background.jpg')] min-h-screen z-50">
       <Header />
       <Search searchItem={searchItem} setSearchItem={setSearchItem} fetchMeals={fetchMeals}/>
       <CardGrid meals={meals}/>
