@@ -12,7 +12,7 @@ const CardGrid = ({ meals }) => {
   })
 
   return (
-    <section className='max-h-full grid grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-3 px-10 pt-10 lg:px-40 lg:pt-20 flex justify-evenly pb-10'>
+    <section className='min-h-full grid grid-cols-2 lg:grid-cols-5 gap-5 md:gap-10 md:px-20 lg:px-10 xl:px-20 pt-10 md:pt-5 xl:pt-2 0 pb-10 md:pb-5 flex flex-grow justify-evenly border-4'>
       {grid}
     </section>
   )
