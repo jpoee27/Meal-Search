@@ -1,1 +1,1 @@
-User Interface create with React JS and Tailwind CSS to search for meals using MealDB API
+User Interface create with React JS and Tailwind CSS to search for meals using Edamam Recipe Search API
