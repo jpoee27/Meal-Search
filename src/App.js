@@ -12,16 +12,18 @@ function App() {
   
   const fetchMeals = async () => {
     const result = await axios(`https://api.edamam.com/search?app_id=df2a8020&app_key=e0970536c6d9fea58a687ed66d1449f8&q=${searchItem}`)
-    //this is now working with the search bar and displays in the meal grid(although the card still needs to be styled better). also need to see how much more info I can get from this api like calories, macros, etc.
     setMeals(result.data.hits);
-    setIsLoading(false);
+    setIsLoading(false);//still haven't set this up with loading spinner
   }
-    
+  
   return (
     <div className="bg-cover bg-[url('./images/mobile-background.jpeg')]  lg:bg-[url('./images/desktop-background.jpg')] min-h-screen z-50">
       <Header />
       <Search searchItem={searchItem} setSearchItem={setSearchItem} fetchMeals={fetchMeals}/>
       <CardGrid meals={meals}/>
+      {/* <h1 className="bg-slate-200 text-teal-600 text-center text-2xl md:text-3xl xl:text-4xl mt-40 py-10">Sorry, could not find any meals called "{searchItem}"</h1> 
+      
+      ^^^this is an error message if there are no results found, but I still need to find away to check if there are no results found after the searchItem has been submitted (problem I am running into now was I could not just check if the searchItem.length === 0 because the searchItem state changes every time a letter is typed in, so need to figure out how to only run it when search has been submitted)*/}
     </div>
   );
 }
