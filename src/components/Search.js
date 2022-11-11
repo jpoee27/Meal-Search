@@ -12,7 +12,6 @@ const Search = ({ searchItem, setSearchItem, fetchMeals }) => {
     if (searchItem !== "") {
       fetchMeals();
       setSearchItem("");
-      
     } else {
       alert("Please Enter a Value in the Search Bar");
     }

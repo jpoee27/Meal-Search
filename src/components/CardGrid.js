@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import Sort from './Sort';
 
-const CardGrid = ({ meals }) => {
+const CardGrid = ({ meals, popUp, setPopUp }) => {
   const [sortType, setSortType] = useState('');
 
   useEffect(() => {
@@ -24,6 +24,8 @@ const CardGrid = ({ meals }) => {
       <Card 
         key={index}
         meal={meal.recipe}
+        popUp={popUp}
+        setPopUp={setPopUp}
       />
     )
   })
