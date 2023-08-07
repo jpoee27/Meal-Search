@@ -1,11 +1,12 @@
 import React from 'react'
 
-const Sort = ({ sortType, setSortType }) => {
+const Sort = ({ sortType, setSortType, sortRef }) => {
   const optionStyles = "bg-white text-teal-400 text-center text-xs md:text-lg xl:text-xl rounded";
   return (
-    <form id="sort-form">
+    <form>
       <label className='text-center text-white text-xs md:text-lg xl:text-xl leading-normal px-5'>Sort Meals By</label>
       <select 
+        ref={sortRef}
         className="bg-teal-400 text-white text-center text-xs md:text-lg xl:text-xl rounded" 
         value={sortType} 
         onChange={(e) => setSortType(e.target.value)}>

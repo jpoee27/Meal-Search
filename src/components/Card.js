@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import PopUp from './PopUp';
 
-const Card = ({ meal, popUp, setPopUp }) => {
+const Card = ({ meal }) => {
   const [hovered, setHovered] = useState(false);
+  const [popUp, setPopUp] = useState(false);
   const toggleHover = () => setHovered(!hovered);
 
   useEffect(() => {
-    console.log(meal);
-  }, [meal])
-  
+    popUp ? 
+    document.body.style.overflow = "hidden" : 
+    document.body.style.overflow = "auto"
+  }, [popUp])
+
   const headingClasses = `text-center text-white text-sm md:text-xl xl:text-2xl leading-normal pt-1 ${hovered ? "" : "truncate"} hover:transition-all`;
   
   let capitalLabel = meal.label.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());

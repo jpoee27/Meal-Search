@@ -24,7 +24,7 @@ const PopUp = ({ trigger, setTrigger, mealTitle, meal }) => {
         </section>
         {/* Ingredients List */}
         <section className='h-[27vh] flex flex-cols mt-3 lg:mt-10 xl:mt-16 border-2 border-teal-800 overflow-y-auto'>
-          <label className='text-lg md:text-2xl xl:text-3xl text-center text-white'>Ingredients: 
+          <label className='w-full text-lg md:text-2xl xl:text-3xl text-center text-white'>Ingredients: 
             <ul className='text-sm md:text-lg xl:text-xl text-left text-zinc-800 ml-5 list-disc columns-2 2xl:columns-4'>{meal.ingredientLines.map((ingredient, index) => <li key={index}> {ingredient} </li>)}</ul>
           </label>
         </section>
